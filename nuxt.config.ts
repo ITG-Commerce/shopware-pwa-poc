@@ -19,8 +19,8 @@ export default defineNuxtConfig({
     // },
   },
   shopware: {
-    accessToken: "SWSCD0VUYMLDNKNFTEFPCFDJYQ",
-    endpoint: "https://stage.shopware.itg.cloud/store-api/",
+    accessToken: `${process.env.NUXT_PUBLIC_SHOPWARE_ACCESS_TOKEN}`,
+    endpoint: `${process.env.NUXT_PUBLIC_SHOPWARE_ENDPOINT}`,
     devStorefrontUrl: "",
   },
   routeRules: {
