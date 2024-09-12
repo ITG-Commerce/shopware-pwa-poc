@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     "@shopware-pwa/composables-next/nuxt-layer",
     "@shopware-pwa/cms-base",
   ],
+
   runtimeConfig: {
     shopware: {
       /**
@@ -12,17 +13,21 @@ export default defineNuxtConfig({
        */
       // endpoint: "",
     },
-    // public: {
-    //   endpoint: "https://demo-frontends.shopware.store/store-api/",
-    //   accessToken: "SWSCBHFSNTVMAWNZDNFKSHLAYW",
-    //   devStorefrontUrl: "",
-    // },
+    public: {
+      contentful: {
+        environment: process.env.CONTENTFUL_ENVIRONMENT!,
+        space: process.env.CONTENTFUL_SPACE_ID!,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+      }
+    },
   },
+
   shopware: {
     accessToken: `${process.env.NUXT_PUBLIC_SHOPWARE_ACCESS_TOKEN}`,
     endpoint: `${process.env.NUXT_PUBLIC_SHOPWARE_ENDPOINT}`,
     devStorefrontUrl: "",
   },
+
   routeRules: {
     "/": {
       isr: 60 * 60 * 24,
@@ -64,6 +69,7 @@ export default defineNuxtConfig({
       isr: 60 * 60 * 24,
     },
   },
+
   /**
    * Commented because of the StackBlitz error
    * Issue: https://github.com/shopware/frontends/issues/88
@@ -72,6 +78,7 @@ export default defineNuxtConfig({
     // typeCheck: true,
     strict: true,
   },
+
   modules: [
     "@vueuse/nuxt",
     "@unocss/nuxt",
@@ -79,6 +86,7 @@ export default defineNuxtConfig({
     "@nuxt/devtools",
     "@nuxtjs/i18n",
   ],
+
   // components: true,
   components: {
     dirs: [
@@ -89,24 +97,30 @@ export default defineNuxtConfig({
     ],
     global: true,
   },
+
   vueuse: {
     ssrHandlers: true,
   },
+
   nitro: {
     compressPublicAssets: true,
   },
+
   unocss: {
     // for presets, theme config, ... look at the uno.config.ts file
   },
+
   css: [
     "@unocss/reset/tailwind-compat.css", // needed to reset styles see https://unocss.dev/guide/style-reset (@unocss/reset)
   ],
+
   router: {
     options: {
       linkActiveClass: "link-active",
       linkExactActiveClass: "link-exact-active text-primary",
     },
   },
+
   i18n: {
     strategy: "prefix_except_default",
     defaultLocale: "en-GB",
@@ -132,5 +146,11 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   telemetry: false,
+  compatibilityDate: "2024-09-12",
+
+  plugins: [
+    '~/plugins/contentful.ts'
+  ],
 });

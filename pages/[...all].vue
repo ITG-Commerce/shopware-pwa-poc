@@ -4,6 +4,7 @@ import type { Ref } from "vue";
 import { pascalCase } from "scule";
 import { useNavigationContext, useNavigationSearch } from "#imports";
 import type { Schemas } from "#shopware";
+import type { ContentfulClientApi } from "contentful";
 
 defineOptions({
   name: "PageResolver",
@@ -16,6 +17,8 @@ const { resolvePath } = useNavigationSearch();
 const route = useRoute();
 const { locale } = useI18n();
 const routePath = route.path.replace(`${locale.value}`, "").replace("//", "/");
+
+const { data: contentfulPage, status } = await useContentfulPage(routePath === '/' ? 'home' : routePath)
 
 const { data: seoResult } = await useAsyncData(
   "cmsResponse" + routePath,
@@ -32,9 +35,10 @@ const { data: seoResult } = await useAsyncData(
     const seoUrl = await resolvePath(routePath);
     return seoUrl;
   },
+
 );
 
-if (!seoResult.value?.foreignKey) {
+if (!seoResult.value?.foreignKey && !contentfulPage) {
   console.error("[...all].vue:", `No data found in API for ${routePath}`);
 
   throw createError({
@@ -54,6 +58,10 @@ onBeforeRouteLeave(() => {
 });
 
 function render() {
+  if (contentfulPage) {
+    return h('div', { innerHTML: contentfulPage.value.fields.pageTitle })
+  }
+
   if (!componentName)
     return h("div", h(resolveComponent(pascalCase(NOT_FOUND_COMPONENT))));
 
@@ -66,6 +74,9 @@ function render() {
   }
   return h("div", {}, "Loading...");
 }
+
+
+
 </script>
 
 <template>
