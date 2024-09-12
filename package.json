@@ -27,7 +27,8 @@
     "defu": "6.1.4",
     "requrl": "3.0.2",
     "sitemap": "8.0.0",
-    "vue": "3.4.38"
+    "vue": "3.4.38",
+    "vue-i18n": "^9.9.0"
   },
   "devDependencies": {
     "@iconify-json/carbon": "1.1.37",
