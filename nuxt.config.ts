@@ -1,3 +1,4 @@
+
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   extends: [
@@ -79,13 +80,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  modules: [
-    "@vueuse/nuxt",
-    "@unocss/nuxt",
-    "@shopware-pwa/nuxt3-module",
-    "@nuxt/devtools",
-    "@nuxtjs/i18n",
-  ],
+  modules: ["@vueuse/nuxt", "@unocss/nuxt", "@shopware-pwa/nuxt3-module", "@nuxt/devtools", "@nuxtjs/i18n"],
 
   // components: true,
   components: {

@@ -4,7 +4,7 @@ import type { Ref } from "vue";
 import { pascalCase } from "scule";
 import { useNavigationContext, useNavigationSearch } from "#imports";
 import type { Schemas } from "#shopware";
-import type { ContentfulClientApi } from "contentful";
+import ContentfulPage from "~/components/contentful/ContentfulPage.vue";
 
 defineOptions({
   name: "PageResolver",
@@ -18,7 +18,7 @@ const route = useRoute();
 const { locale } = useI18n();
 const routePath = route.path.replace(`${locale.value}`, "").replace("//", "/");
 
-const { data: contentfulPage, status } = await useContentfulPage(routePath === '/' ? 'home' : routePath)
+const { data: contentfulPage, status } = await useContentfulPage(routePath)
 
 const { data: seoResult } = await useAsyncData(
   "cmsResponse" + routePath,
@@ -58,8 +58,8 @@ onBeforeRouteLeave(() => {
 });
 
 function render() {
-  if (contentfulPage) {
-    return h('div', { innerHTML: contentfulPage.value.fields.pageTitle })
+  if (contentfulPage.value) {
+    return h(ContentfulPage, { page: contentfulPage.value });
   }
 
   if (!componentName)

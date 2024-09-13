@@ -264,7 +264,7 @@ watch(
   </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 nav .link-active {
   @apply text-secondary-900 bg-primary bg-opacity-10 rounded-lg;
 }

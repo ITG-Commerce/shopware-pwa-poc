@@ -1,6 +1,8 @@
 // types.d.ts or any existing declaration file
 import { ContentfulClientApi } from 'contentful'; // or the appropriate type
 
+import "~/api-types/content-types";
+
 declare module '#app' {
   interface NuxtApp {
     $contentful: {
@@ -17,3 +19,4 @@ interface ContentfulConfig {
   CONTENTFUL_SPACE_ID: string;
   CONTENTFUL_ACCESS_TOKEN: string;
 }
+
