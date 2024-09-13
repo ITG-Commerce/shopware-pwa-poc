@@ -11,7 +11,7 @@ export async function useContentfulPage(slug: string) {
             const landingPages = await contentfulClient.getEntries<TypePageSkeleton>({
                 content_type: 'page',
                 "fields.slug": slug,
-                include: 10
+                include: 10,
             });
 
             const landingPage = landingPages.items.find(item => item.fields.slug === slug)
