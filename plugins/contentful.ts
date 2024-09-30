@@ -1,4 +1,4 @@
-import * as contentful from 'contentful'
+import contentful from 'contentful';
 
 // use default environment config for convenience
 // these will be set via `env` property in nuxt.config.js
