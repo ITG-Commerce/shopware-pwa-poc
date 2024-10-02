@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Entry } from 'contentful';
-import { isTypeHero, isTypeRowProduct, type TypeHeroFields, type TypeHeroSkeleton, type TypePageSkeleton } from '~/api-types/content-types';
+import { isTypeHero, isTypeRowProduct, type TypeHeroSkeleton, type TypePageSkeleton } from '~/api-types/content-types';
 
 const { page } = defineProps<{
     page: Entry<TypePageSkeleton>
