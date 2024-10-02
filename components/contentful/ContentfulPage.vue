@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Entry } from 'contentful';
-import { isTypeHero, type TypeHeroFields, type TypeHeroSkeleton, type TypePageSkeleton } from '~/api-types/content-types';
+import { isTypeHero, isTypeRowProduct, type TypeHeroFields, type TypeHeroSkeleton, type TypePageSkeleton } from '~/api-types/content-types';
 
 const { page } = defineProps<{
     page: Entry<TypePageSkeleton>
@@ -16,9 +16,8 @@ const blocks = computed(() => page.fields.blocks as Entry<TypeHeroSkeleton>[]);
         <Meta name="description" :content="page.fields.description as string" />
         <div v-if="page.fields.blocks" class="flex flex-col">
             <div v-for="block in blocks" :key="block.sys.id">
-                <ContentfulHero
-                    v-if="isTypeHero(block)"
-                    :block="block" />
+                <ContentfulHero v-if="isTypeHero(block)" :block="block" />
+                <ContentfulRowProduct v-if="isTypeRowProduct(block)" :block="block" />
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ const route = useRoute();
 const { locale } = useI18n();
 const routePath = route.path.replace(`${locale.value}`, "").replace("//", "/");
 
-const { data: contentfulPage, status } = await useContentfulPage(routePath)
+const { data: contentfulPage } = await useContentfulPage(routePath)
 
 const { data: seoResult } = await useAsyncData(
   "cmsResponse" + routePath,
