@@ -1,5 +1,5 @@
 // types.d.ts or any existing declaration file
-import { ContentfulClientApi } from 'contentful'; // or the appropriate type
+import { ContentfulClientApi } from 'contentful'; //or the appropriate type
 
 import "~/api-types/content-types";
 
@@ -11,6 +11,15 @@ declare module '#app' {
     $config: {
       contentful: ContentfulConfig;
     };
+  }
+
+}
+declare module '@nuxt/schema' {
+  interface NuxtConfig {
+    unocss?: any;
+  }
+  interface NuxtOptions {
+    unocss?: any;
   }
 }
 

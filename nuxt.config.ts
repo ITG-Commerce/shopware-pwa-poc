@@ -1,4 +1,3 @@
-
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   extends: [
@@ -80,7 +79,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  modules: ["@vueuse/nuxt", "@unocss/nuxt", "@shopware-pwa/nuxt3-module", "@nuxt/devtools", "@nuxtjs/i18n"],
+  modules: ["@vueuse/nuxt", "@shopware-pwa/nuxt3-module", "@nuxt/devtools", "@nuxtjs/i18n", "@nuxt/ui"],
 
   // components: true,
   components: {
@@ -102,11 +101,13 @@ export default defineNuxtConfig({
   },
 
   unocss: {
-    // for presets, theme config, ... look at the uno.config.ts file
+    uno: false,
+    preflight: false,
+    icons: true
   },
 
   css: [
-    "@unocss/reset/tailwind-compat.css", // needed to reset styles see https://unocss.dev/guide/style-reset (@unocss/reset)
+    // "@unocss/reset/tailwind-compat.css", // needed to reset styles see https://unocss.dev/guide/style-reset (@unocss/reset)
   ],
 
   router: {
@@ -147,5 +148,5 @@ export default defineNuxtConfig({
 
   plugins: [
     '~/plugins/contentful.ts'
-  ],
+  ]
 });
