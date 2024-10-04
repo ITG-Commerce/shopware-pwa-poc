@@ -14,14 +14,6 @@ declare module '#app' {
   }
 
 }
-declare module '@nuxt/schema' {
-  interface NuxtConfig {
-    unocss?: any;
-  }
-  interface NuxtOptions {
-    unocss?: any;
-  }
-}
 
 interface ContentfulConfig {
   CONTENTFUL_ENVIRONMENT: string;
