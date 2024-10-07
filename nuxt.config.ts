@@ -152,4 +152,8 @@ export default defineNuxtConfig({
 		global: true,
 		disableGlobalStyles: true,
 	},
+
+	colorMode: {
+		preference: "light",
+	},
 });
