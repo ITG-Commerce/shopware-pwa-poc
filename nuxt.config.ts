@@ -85,6 +85,7 @@ export default defineNuxtConfig({
 		"@nuxt/devtools",
 		"@nuxtjs/i18n",
 		"@nuxt/ui",
+		"@nuxt/image",
 	],
 
 	// components: true,
@@ -154,6 +155,6 @@ export default defineNuxtConfig({
 	},
 
 	colorMode: {
-		preference: "light",
+		preference: "system",
 	},
 });

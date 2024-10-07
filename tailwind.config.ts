@@ -1,7 +1,5 @@
-import defaultTheme from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss";
 import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
-import typography from '@tailwindcss/typography';
 
 export default <Partial<Config>>{
 	theme: {
@@ -69,26 +67,9 @@ export default <Partial<Config>>{
 			},
 		},
 	},
-	mode: "jit",
-	purge: [
-		"./components/**/*.{js,vue,ts}",
-		"./composables/**/*.{js,vue,ts}",
-		"./domains/**/*.{js,vue,ts}",
-		"./layouts/**/*.vue",
-		"./pages/**/*.vue",
-		"./plugins/**/*.{js,ts}",
-		"./app.vue",
-		"./error.vue",
-	],
-	safelist: [
-		"max-md:hidden",
-		"md:max-lg:hidden",
-		"lg:hidden"
-	],
 	plugins: [
-		typography,
 		iconsPlugin({
 			collections: getIconCollections(["carbon"]),
 		}),
-	]
+	],
 };

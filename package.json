@@ -14,7 +14,7 @@
 		"generate-types": "shopware-api-gen generate --apiType=store"
 	},
 	"dependencies": {
-		"@nuxt/devtools": "^1.5.0",
+		"@nuxt/devtools": "^1.5.2",
 		"@shopware-pwa/cms-base": "canary",
 		"@shopware-pwa/composables-next": "canary",
 		"@shopware-pwa/helpers-next": "canary",
@@ -22,7 +22,7 @@
 		"@shopware/api-client": "canary",
 		"@vuelidate/core": "2.0.3",
 		"@vuelidate/validators": "2.0.4",
-		"@vueuse/core": "^11.0.3",
+		"@vueuse/core": "^11.1.0",
 		"@vueuse/nuxt": "11.0.3",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
@@ -32,27 +32,28 @@
 		"requrl": "3.0.2",
 		"sitemap": "8.0.0",
 		"vue": "3.5.11",
-		"vue-i18n": "^9.9.0"
+		"vue-i18n": "^9.14.1"
 	},
 	"devDependencies": {
-		"@contentful/rich-text-types": "^16.5.2",
+		"@contentful/rich-text-types": "^16.8.5",
 		"@egoist/tailwindcss-icons": "^1.8.1",
 		"@iconify-json/carbon": "1.1.37",
 		"@iconify-json/mdi": "^1.2.0",
+		"@nuxt/image": "^1.8.1",
 		"@nuxt/ui": "^2.18.6",
 		"@nuxtjs/i18n": "8.3.1",
 		"@shopware/api-gen": "canary",
 		"@tailwindcss/typography": "^0.5.15",
-		"@types/node": "^22.5.4",
-		"@typescript-eslint/parser": "^8.5.0",
-		"@vue/compiler-sfc": "^3.5.4",
+		"@types/node": "^22.7.4",
+		"@typescript-eslint/parser": "^8.8.1",
+		"@vue/compiler-sfc": "^3.5.11",
 		"eslint": "9.9.1",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-vue": "9.27.0",
 		"nuxt": "3.13.0",
-		"sass-embedded": "^1.78.0",
+		"sass-embedded": "^1.79.4",
 		"typescript": "5.5.4",
-		"vite": "^5.4.4",
+		"vite": "^5.4.8",
 		"vue-eslint-parser": "9.4.3"
 	},
 	"engines": {
