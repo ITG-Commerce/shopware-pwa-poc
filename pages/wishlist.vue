@@ -163,7 +163,7 @@ onMounted(() => {
         class="absolute inset-0 flex items-center justify-center z-10 bg-white/50"
       >
         <div
-          class="h-15 w-15 i-carbon-progress-bar-round animate-spin c-secondary-500"
+          class="h-14 w-14 i-carbon-progress-bar-round animate-spin c-secondary-500"
         />
       </div>
       <div v-else-if="products.length">

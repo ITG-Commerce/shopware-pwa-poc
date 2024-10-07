@@ -26,7 +26,7 @@ const gridColumns = computed<number>(() =>
           <NuxtLink :to="formatLink(`/`)">
             <span class="sr-only">Shopware</span>
             <img
-              class="h-15 w-auto sm:h-15"
+              class="h-14 w-auto sm:h-14"
               src="/logo.svg"
               alt="logo of the shop"
             />
