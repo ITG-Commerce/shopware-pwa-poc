@@ -1,0 +1,12 @@
+{
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"search.exclude": {
+		"**/.nuxt": true,
+		"**/node_modules": false
+	}
+}
