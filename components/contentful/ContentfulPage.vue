@@ -1,26 +1,33 @@
 <script setup lang="ts">
-import type { Entry } from 'contentful';
-import { isTypeHero, isTypeRowProduct, type TypeHeroSkeleton, type TypePageSkeleton } from '~/api-types/content-types';
+import type { Entry } from "contentful";
+import {
+	isTypeHero,
+	isTypeRowProduct,
+	isTypeQuote,
+	type TypeHeroSkeleton,
+	type TypePageSkeleton,
+	type TypeQuoteSkeleton,
+} from "~/api-types/content-types";
 
 const { page } = defineProps<{
-    page: Entry<TypePageSkeleton>
+	page: Entry<TypePageSkeleton>;
 }>();
 
 const blocks = computed(() => page.fields.blocks as Entry<TypeHeroSkeleton>[]);
-
 </script>
 
 <template>
-    <div class="w-full min-h-screen">
-        <Title>{{ page.fields.title }}</Title>
-        <Meta name="description" :content="page.fields.description as string" />
-        <div v-if="page.fields.blocks" class="flex flex-col">
-            <div v-for="block in blocks" :key="block.sys.id">
-                <ContentfulHero v-if="isTypeHero(block)" :block="block" />
-                <ContentfulRowProduct v-if="isTypeRowProduct(block)" :block="block" />
-            </div>
-        </div>
-    </div>
+	<div class="w-full min-h-screen">
+		<Title>{{ page.fields.title }}</Title>
+		<Meta name="description" :content="page.fields.description as string" />
+		<div v-if="page.fields.blocks" class="flex flex-col">
+			<div v-for="block in blocks" :key="block.sys.id">
+				<ContentfulHero v-if="isTypeHero(block)" :block="block" />
+				<ContentfulRowProduct v-if="isTypeRowProduct(block)" :block="block" />
+				<ContentfulQuote v-if="isTypeQuote(block)" :block="block" />
+			</div>
+		</div>
+	</div>
 </template>
 
 <style scoped></style>
