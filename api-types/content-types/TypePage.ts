@@ -1,6 +1,5 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 import type { TypeHeroSkeleton } from "./TypeHero";
-import type { TypeProductSliderSkeleton } from "./TypeProductSlider";
 import type { TypeQuoteSkeleton } from "./TypeQuote";
 import type { TypeRowProductSkeleton } from "./TypeRowProduct";
 
@@ -8,7 +7,7 @@ export interface TypePageFields {
     slug: EntryFieldTypes.Symbol;
     title: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.Text;
-    blocks?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeHeroSkeleton | TypeProductSliderSkeleton | TypeQuoteSkeleton | TypeRowProductSkeleton>>;
+    blocks?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeHeroSkeleton | TypeQuoteSkeleton | TypeRowProductSkeleton>>;
 }
 
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, "page">;
